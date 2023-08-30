@@ -27,21 +27,21 @@ def main():
                        '3 - Средняя зарплата по вакансиям\n'
                        '4 - Посмотреть вакансии с зарплатой выше средней\n'
                        '5 - Посмотреть вакансии по ключевому слову\n')
-    if user_input == 1:
+    if user_input == '1':
         job_count_total = db_manger.get_companies_and_vacancies_count()
         print(job_count_total)
-    elif user_input == 2:
+    elif user_input is '2':
         all_jobs = db_manger.get_all_vacancies()
         print(all_jobs)
-    elif user_input == 3:
+    elif user_input == '3':
         average_salary = db_manger.get_avg_salary()
         print(average_salary)
-    elif user_input == 4:
+    elif user_input == '4':
         with_higher_salary = db_manger.get_vacancies_with_higher_salary()
         print(with_higher_salary)
-    elif user_input == 5:
-        user_input = input('Введите ключевое слово: ')
-        with_keyword = db_manger.get_vacancies_with_keyword(user_input)
+    elif user_input == '5':
+        keyword = input('Введите ключевое слово: ')
+        with_keyword = db_manger.get_vacancies_with_keyword(keyword)
         print(with_keyword)
     else:
         print('Что-то пошло не так, попробуйте ещё раз')
