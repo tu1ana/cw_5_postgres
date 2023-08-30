@@ -79,9 +79,9 @@ class DBManager:
         return result
 
 
-db = DBManager(host='localhost', database='headhunter', user='postgres', password=os.getenv('DATABASE_PASS'))
+# db = DBManager(host='localhost', database='headhunter', user='postgres', password=os.getenv('DATABASE_PASS'))
 # print(db.get_companies_and_vacancies_count())
-print(db.get_all_vacancies())
+# print(db.get_all_vacancies())
 # print(db.get_avg_salary())
 # print(db.get_vacancies_with_higher_salary())
 # print(db.get_vacancies_with_keyword('Python'))
