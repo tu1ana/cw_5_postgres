@@ -31,10 +31,4 @@ class HeadHunterAPI:
         return employer_data
 
 
-hhapi = HeadHunterAPI()
-# print(hhapi.get_vacancies('ПроКомплаенс'))
-pprint(hhapi.get_employer_data([
-        'BI.ZONE', 'ANABAR', 'Blue underlined link', 'Brand Analytics',
-        'Федеральное автономное учреждение Государственный Научно-Исследовательский Институт Авиационных Систем',
-        'Учкнига', 'Mediascope', 'Pacific.agency', 'ОКБ', 'BostonGene Technologies', 'ПроКомплаенс'
-    ]))
+# hhapi = HeadHunterAPI()
