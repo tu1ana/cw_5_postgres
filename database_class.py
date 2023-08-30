@@ -74,7 +74,7 @@ class DBManager:
                 cur.execute('''SELECT employer_name, job_title, salary_from, salary_to, jobs.url
                                         FROM employers
                                         INNER JOIN jobs USING(employer_id)
-                                        WHERE job_title LIKE %s''', ('%' + keyword + '%',))
+                                        WHERE job_title ILIKE %s''', ('%' + keyword + '%',))
                 result = cur.fetchall()
         return result
 
