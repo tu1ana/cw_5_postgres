@@ -1,5 +1,3 @@
-import os
-
 import psycopg2
 
 from config import config
@@ -8,16 +6,9 @@ from config import config
 class DBManager:
     """Класс для работы с данными в БД; подключается к БД PostgreSQL."""
 
-    def __init__(self, host, database, user, password) -> None:
-        self.conn = psycopg2.connect(host=host, database=database, user=user, password=password)
-        self.cur = self.conn.cursor()
-
-    def __del__(self):
-        self.cur.close()
-        self.conn.close()
-
-    def __repr__(self):
-        pass
+    def __init__(self, db_name, params) -> None:
+        self.db_name = db_name
+        self.params = params
 
     def get_companies_and_vacancies_count(self):
         """Получает список всех компаний и количество вакансий у каждой компании."""
@@ -79,7 +70,7 @@ class DBManager:
         return result
 
 
-# db = DBManager(host='localhost', database='headhunter', user='postgres', password=os.getenv('DATABASE_PASS'))
+# db = DBManager('headhunter', params=config())
 # print(db.get_companies_and_vacancies_count())
 # print(db.get_all_vacancies())
 # print(db.get_avg_salary())
