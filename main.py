@@ -1,10 +1,11 @@
 import os
 
+from config import config
 from database_class import DBManager
 
 
 def main():
-    db_manger = DBManager(host='localhost', database='headhunter', user='postgres', password=os.getenv('DATABASE_PASS'))
+    db_manger = DBManager('headhunter', params=config())
 
     print('Список компаний с сайта hh.ru, доступных для просмотра:\n'
           'BI.ZONE\n'
